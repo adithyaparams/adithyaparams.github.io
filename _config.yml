@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "adithyaparams"
   avatar           : "chomp.png"
-  bio              : "beep booping"
+  bio              : ""
   location         : "Cambridge, MA"
   # employer         :
   # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   # googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            : adithyaparams@berkeley.edu
+  # email            : adithyaparams@berkeley.edu
   # researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "adithyaparam"
   # orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
