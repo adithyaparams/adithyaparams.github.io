@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Maple Canyon Day 1 · planning only</name>
+    <description>All approach and walk-off lines are schematic. Verify legal parking, access, closures, trails, anchors, and terrain on site.</description>
+    <Style id="parking"><IconStyle><color>ff2f3627</color><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png</href></Icon></IconStyle></Style>
+    <Style id="route"><IconStyle><color>ff286ab8</color><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/climbing.png</href></Icon></IconStyle></Style>
+    <Style id="tachyLine"><LineStyle><color>ff286ab8</color><width>4</width></LineStyle></Style>
+    <Style id="dizzyLine"><LineStyle><color>ff7a6523</color><width>4</width></LineStyle></Style>
+    <Style id="walkLine"><LineStyle><color>ff495524</color><width>4</width></LineStyle></Style>
+    <Folder><name>Heart Rock · Tachycardia</name>
+      <Placemark><name>Heart Rock pullout · verify legal parking</name><styleUrl>#parking</styleUrl><Point><coordinates>-111.67215,39.55555,0</coordinates></Point></Placemark>
+      <Placemark><name>Tachycardia · 5.7 · 3 pitches</name><description>Mountain Project: https://www.mountainproject.com/route/107669530/tachycardia</description><styleUrl>#route</styleUrl><Point><coordinates>-111.6708,39.5561,0</coordinates></Point></Placemark>
+      <Placemark><name>SCHEMATIC Heart Rock approach</name><description>Not a recorded trail. Cross the streambed, pass right of the large boulder, use the drainage east of Heart Rock, then bushwhack roughly 50 yards.</description><styleUrl>#tachyLine</styleUrl><LineString><tessellate>1</tessellate><coordinates>-111.67215,39.55555,0 -111.6718,39.55575,0 -111.6713,39.55593,0 -111.6708,39.5561,0</coordinates></LineString></Placemark>
+    </Folder>
+    <Folder><name>Dizzy Rock · The Dizzy Channel</name>
+      <Placemark><name>Schoolroom-side parking · verify designated space</name><styleUrl>#parking</styleUrl><Point><coordinates>-111.68675,39.55545,0</coordinates></Point></Placemark>
+      <Placemark><name>The Dizzy Channel · 5.8- · 4 pitches</name><description>Mountain Project: https://www.mountainproject.com/route/107581826/the-dizzy-channel</description><styleUrl>#route</styleUrl><Point><coordinates>-111.6875,39.556,0</coordinates></Point></Placemark>
+      <Placemark><name>SCHEMATIC Dizzy Rock approach</name><description>Not a recorded trail. Walk the base, pass Fish Pin, and go around the steep overhanging arete.</description><styleUrl>#dizzyLine</styleUrl><LineString><tessellate>1</tessellate><coordinates>-111.68675,39.55545,0 -111.687,39.5557,0 -111.68725,39.5559,0 -111.6875,39.556,0</coordinates></LineString></Placemark>
+      <Placemark><name>SCHEMATIC Dizzy summit walk-off</name><description>Not a recorded trail. Exposed third- and fourth-class terrain. Verify on site; Fish Pin rappels are the backup.</description><styleUrl>#walkLine</styleUrl><LineString><tessellate>1</tessellate><coordinates>-111.6875,39.556,0 -111.68725,39.55585,0 -111.68675,39.55555,0 -111.6862,39.55495,0 -111.68655,39.55525,0 -111.68675,39.55545,0</coordinates></LineString></Placemark>
+    </Folder>
+  </Document>
+</kml>

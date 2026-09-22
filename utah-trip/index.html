@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Personal three-day Utah sport-climbing plan for Maple Canyon, Big Cottonwood Canyon, and a flexible Sunday objective.">
+  <title>Utah · climbing weekend</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root{--ink:#21352f;--muted:#5b6a65;--paper:#f6f3eb;--card:#fffdf8;--line:#d6d3c9;--pine:#245549;--ochre:#b86a28;--gold:#d6a23f;--red:#9a3d2e;--blue:#23657a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#1e6253;text-underline-offset:2px}button{font:inherit;color:inherit;cursor:pointer}header{padding:20px 24px 16px;border-bottom:1px solid var(--line);background:rgba(246,243,235,.97)}h1{font-size:clamp(23px,3vw,31px);line-height:1.1;margin:0}.subtitle{margin:6px 0 0;color:var(--muted)}nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}nav button,.tool{border:1px solid #aeb8b2;background:white;border-radius:5px;padding:8px 12px}nav button[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:white}.day{display:grid;grid-template-columns:minmax(340px,430px) minmax(0,1fr);height:calc(100vh - 145px);min-height:620px}.day[hidden],.placeholder[hidden]{display:none}aside{padding:20px;overflow:auto}.map{height:100%;min-height:520px}h2{font-size:21px;margin:0 0 8px}h3{font-size:17px;margin:20px 0 6px}h4{font-size:15px;margin:14px 0 4px}.small{font-size:13px;color:var(--muted)}.alert{background:#fff5df;border:1px solid #e3bf76;border-left:5px solid var(--gold);padding:11px 12px;border-radius:4px;margin:12px 0}.alert.danger{background:#fff0ec;border-color:#d69a8b;border-left-color:var(--red)}.schedule{display:grid;grid-template-columns:72px 1fr;gap:6px 10px;margin:12px 0}.schedule time{font-weight:750;color:var(--pine)}.route{background:var(--card);border:1px solid var(--line);border-radius:7px;margin:15px 0;padding:15px}.route h3{margin:0 0 5px}.facts{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}.pill{font-size:12px;font-weight:700;background:#e9eee9;border-radius:999px;padding:3px 8px}.pitches{padding-left:20px}.pitches li{margin:5px 0}.tools{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tool{padding:6px 9px;background:var(--card)}.legend{font-size:12px;color:var(--muted);margin:10px 0}.swatch{display:inline-block;width:25px;vertical-align:middle;margin-right:6px;border-top:4px solid var(--ochre)}.swatch.blue{border-color:var(--blue)}.swatch.walk{border-top:3px dashed var(--pine)}.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}.photo{margin:0;border:1px solid var(--line);background:white;border-radius:5px;overflow:hidden}.photo a{display:block}.photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#ddd}.photo figcaption{font-size:11px;line-height:1.35;padding:7px;color:var(--muted)}footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);margin-top:18px;padding-top:12px}.pin{width:30px!important;height:30px!important;border-radius:50%;color:white;background:var(--ochre);border:2px solid white;text-align:center;font:bold 13px/26px system-ui;box-shadow:0 1px 4px #0006}.pin.parking{background:#273631;border-radius:6px}.pin.dizzy{background:var(--blue)}.leaflet-tooltip.route-label{background:#fffdf8;border:1px solid #8f9994;color:var(--ink);font-weight:700;box-shadow:none}.placeholder{max-width:1050px;margin:auto;padding:28px 22px}.placeholder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}.option{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:18px}.option h3{margin-top:0}.muted-tag{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.checklist{padding-left:20px}.checklist li{margin:6px 0}
+    @media(max-width:780px){header{padding:14px}.day{display:flex;flex-direction:column;height:auto;min-height:0}.map{height:48vh;height:48dvh;min-height:340px;order:-1}.photos{grid-template-columns:1fr}aside{overflow:visible;padding:16px}.schedule{grid-template-columns:64px 1fr}nav button{flex:1;min-width:90px;padding:9px 5px}.placeholder{padding:20px 16px}.leaflet-tooltip.route-label{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Utah · climbing weekend</h1>
+  <p class="subtitle">October 23–25, 2026 · two climbers · sport climbing · Millcreek base</p>
+  <nav aria-label="Trip day">
+    <button id="day1-tab" aria-pressed="true">Fri · Maple</button>
+    <button id="day2-tab" aria-pressed="false">Sat · BCC</button>
+    <button id="day3-tab" aria-pressed="false">Sun · Flexible</button>
+  </nav>
+</header>
+
+<main>
+  <section class="day" id="day1-section">
+    <aside>
+      <h2>Day 1 · Maple Canyon</h2>
+      <p><b>Tachycardia first, The Dizzy Channel second.</b> The south-facing Heart Rock line should warm sooner; Dizzy Rock's northwestern corner is the better bet for useful afternoon light.</p>
+      <div class="alert danger"><b>Planning map only.</b> Every approach and walk-off line is schematic—not a recorded trail. Verify access, parking, anchors, weather, daylight, and the route on site. Turn around if anything does not match.</div>
+      <div class="schedule" aria-label="Suggested schedule">
+        <time>6:00</time><span>Leave Millcreek; confirm forecast and access notice.</span>
+        <time>8:15</time><span>Park below Heart Rock; approach Tachycardia.</span>
+        <time>9:00</time><span>Climb Tachycardia; use only the dedicated rappel descent.</span>
+        <time>12:15</time><span>Lunch, drive/relocate, and approach Dizzy Rock.</span>
+        <time>1:15</time><span>Start The Dizzy Channel only with ample daylight.</span>
+        <time>4:30</time><span>Hard summit/walk-off target. Headlamps remain mandatory.</span>
+      </div>
+      <div class="tools"><button class="tool" id="show-all">Show both areas</button><button class="tool" id="show-heart">Heart Rock</button><button class="tool" id="show-dizzy">Dizzy Rock</button><a class="tool" href="maple-canyon-day-1.kml" download>Download KML</a></div>
+      <div class="legend"><span class="swatch"></span>Tachycardia schematic approach<br><span class="swatch blue"></span>Dizzy schematic approach<br><span class="swatch walk"></span>Dizzy schematic walk-off</div>
+
+      <article class="route" id="tachycardia">
+        <h3>1 · Tachycardia</h3>
+        <div class="facts"><span class="pill">5.7</span><span class="pill">3 pitches</span><span class="pill">300 ft</span><span class="pill">fully bolted</span><span class="pill">39.5561, −111.6708</span></div>
+        <p><b>Gear:</b> 12 quickdraws, anchor gear, helmets, and one 60 m rope or longer.</p>
+        <h4>Parking & approach</h4>
+        <p>Use the pullout directly below Heart Rock. Cross the streambed, cut right around the large boulder, and follow the drainage east of Heart Rock. An ammo-can geocache confirms the drainage; bushwhack roughly 50 yards to the toe.</p>
+        <div class="alert"><b>Private-property notice:</b> Mountain Project flags Heart Rock as private property. Check the current notice and obey all closures and parking restrictions before committing.</div>
+        <h4>Pitches</h4>
+        <ol class="pitches"><li><b>Vena Cava · 5.5 · 30 m:</b> jugs and cobbles to a sloping two-bolt ledge.</li><li><b>The Left Ventricle · 5.6 · 25 m:</b> trend left toward the western headwall belay.</li><li><b>Tachycardia · 5.7 · 30 m:</b> short juggy bulge, exposed headwall, then the protected easy slab to the summit register.</li></ol>
+        <h4>Descent · dedicated line only</h4>
+        <p><b>Do not rappel the climbing route.</b> From the summit register, find the separate anchors roughly 30 ft north across the cleft. Rappel about 80 ft, then 90 ft—crossing the narrows to anchors on the opposite wall—then 80 ft into the slot and down the ramp.</p>
+        <div class="photos">
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/116752567/new-rappeldescent-route-shown-in-yellow-established-41819" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/116752567_medium_1555647457_topo.jpg?cache=1773323865" alt="Tachycardia dedicated three-rappel descent marked in yellow" loading="lazy"></a><figcaption>Full dedicated descent line · Jason Stevens · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/116752604/this-is-a-view-from-the-ammo-can-looking-north-at-the-location-of-the-first-rapp" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/116752604_medium_1555648040_topo.jpg?cache=1702073300" alt="View from the ammo can toward the first rappel anchor" loading="lazy"></a><figcaption>First anchor from the ammo can · Jason Stevens · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/116752587/a-view-of-the-new-descent-route-established-on-41819-the-second-and-third-rappel" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/116752587_medium_1555647655_topo.jpg?cache=1780198936" alt="Second and third rappel stations on the Tachycardia descent" loading="lazy"></a><figcaption>Second and third stations · Jason Stevens · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/116752645/this-is-the-new-third-rappel-anchor-station-it-was-placed-on-41819-this-picture-" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/116752645_medium_1555648492.jpg?cache=1785530346" alt="Third rappel anchor on the Tachycardia descent" loading="lazy"></a><figcaption>Third rappel anchor · Jason Stevens · Mountain Project</figcaption></figure>
+        </div>
+        <p class="small"><a href="https://www.mountainproject.com/route/107669530/tachycardia" target="_blank" rel="noopener">Current route and access information ↗</a></p>
+      </article>
+
+      <article class="route" id="dizzy-channel">
+        <h3>2 · The Dizzy Channel</h3>
+        <div class="facts"><span class="pill">5.8−</span><span class="pill">4 pitches</span><span class="pill">270 ft</span><span class="pill">fully bolted</span><span class="pill">39.5560, −111.6875</span></div>
+        <p><b>Gear:</b> 12 quickdraws, anchor gear, helmets, and one 60 m rope if carrying the rappel backup.</p>
+        <h4>Parking & approach</h4>
+        <p>From the Schoolroom-side parking area, walk along the base of Dizzy Rock, pass Fish Pin, and continue beneath the steep overhanging arête. Start on easier terrain just around the arête.</p>
+        <h4>Pitches</h4>
+        <ol class="pitches"><li><b>The Hidey Hole · 5.7:</b> meandering bolts through clean rock to a pod.</li><li><b>5.6:</b> climb the arête, cross a narrow ledge, and climb the tower block.</li><li><b>5.8:</b> step to Dizzy Rock, climb to the short juggy overhang, and belay on Shoe Leather Ledge.</li><li><b>5.6:</b> follow bolts to chains below the summit; one or two easy fifth-class moves reach the true top.</li></ol>
+        <h4>Preferred descent · summit walk-off</h4>
+        <p>Scramble south over exposed third- and fourth-class terrain to the grassy bench on the west rim of the Left Hand Fork. Follow the faint trail south into the fork, or use the steep northern gully toward the route base only if it is clearly identifiable and safe.</p>
+        <div class="alert"><b>Rappel backup:</b> From the final belay, scramble about 15 ft climber's left to the Fish Pin chains. Descend Fish Pin in three straight rappels with a 60 m rope. Do not improvise if the walk-off is unclear or wet.</div>
+        <div class="photos">
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/126325304/first-half-of-walking-off-the-summit-head-southish-crossing-a-few-small-gullies-" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/126325304_medium_1717905154.jpg?cache=1786060677" alt="First half of The Dizzy Channel summit walk-off" loading="lazy"></a><figcaption>Walk-off, first half · Brian Reyman · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/126325327/second-half-of-walking-off-the-summit-once-across-the-final-gully-traverse-along" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/126325327_medium_1717905303.jpg?cache=1786060678" alt="Second half of The Dizzy Channel summit walk-off" loading="lazy"></a><figcaption>Walk-off, second half · Brian Reyman · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/107582015/dizzy-rock-as-viewed-from-the-schoolroom-parking-area-emthe-dizzy-channelem-star" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/107582015_medium_1494198448.jpg?cache=1597362503" alt="Dizzy Rock viewed from Schoolroom parking" loading="lazy"></a><figcaption>Dizzy Rock from Schoolroom · Matt Selman · Mountain Project</figcaption></figure>
+          <figure class="photo"><a href="https://www.mountainproject.com/photo/203242341/route-start" target="_blank" rel="noopener"><img src="https://mountainproject.com/assets/photos/climb/203242341_medium_1782401351_topo.jpg?cache=1782825149" alt="Start of The Dizzy Channel route" loading="lazy"></a><figcaption>Route start · Ambrose Curtis · Mountain Project</figcaption></figure>
+        </div>
+        <p class="small"><a href="https://www.mountainproject.com/route/107581826/the-dizzy-channel" target="_blank" rel="noopener">Current route information ↗</a></p>
+      </article>
+
+      <h3>Before leaving the car</h3>
+      <ul class="checklist"><li>Current weather, road, fire, access, and private-property status checked.</li><li>Offline map and KML downloaded; photos saved for offline reference.</li><li>Helmets, headlamps, layers, food, water, first aid, and retreat plan packed.</li><li>Two multipitches can consume the full day. Single-pitch climbing is only a bonus.</li></ul>
+      <footer>Route facts and photographs: Mountain Project contributors, linked individually above. Map © OpenStreetMap contributors. This personal plan is not a guidebook and does not replace current local information or judgment.</footer>
+    </aside>
+    <div id="map" class="map" aria-label="Maple Canyon Day 1 map with parking, routes, and schematic approaches"></div>
+  </section>
+
+  <section class="placeholder" id="day2-section" hidden>
+    <span class="muted-tag">Day 2 · planning placeholder</span><h2>Saturday · Challenge Buttress</h2>
+    <p>Approximately four hours of single-pitch sport climbing in Big Cottonwood Canyon, followed by an open afternoon in Salt Lake City or outdoors.</p>
+    <div class="placeholder-grid"><article class="option"><h3>Climbing window</h3><p>Pick the exact start time after checking temperature, canyon traffic, and parking. Keep the session short enough to preserve the rest of the day.</p></article><article class="option"><h3>To add later</h3><p>Parking pin, approach line, route shortlist by grade, sun/shade notes, and a weather-dependent backup.</p></article></div>
+  </section>
+  <section class="placeholder" id="day3-section" hidden>
+    <span class="muted-tag">Day 3 · decision left open</span><h2>Sunday · American Fork or Hard Rock</h2>
+    <p>Approximately four hours of single-pitch sport climbing, with the final area chosen from current conditions and the group's energy. Keep the rest of the day open for sightseeing or another activity.</p>
+    <div class="placeholder-grid"><article class="option"><h3>American Fork</h3><p>Choose if conditions, desired grades, and canyon logistics make it the stronger morning option.</p></article><article class="option"><h3>Hard Rock</h3><p>Keep as the alternate until the forecast and preferred route list are settled.</p></article></div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const places={heartParking:[39.55555,-111.67215],tachy:[39.5561,-111.6708],dizzyParking:[39.55545,-111.68675],dizzy:[39.556,-111.6875],dizzySummit:[39.55585,-111.68725],bench:[39.55495,-111.6862]};
+  const map=L.map('map',{zoomAnimation:false}).setView([39.556,-111.68],14);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  L.control.scale().addTo(map);
+  const icon=(label,kind='')=>L.divIcon({className:'pin '+kind,html:label,iconSize:[30,30],iconAnchor:[15,15]});
+  L.marker(places.heartParking,{icon:icon('P','parking')}).addTo(map).bindPopup('<b>Heart Rock pullout</b><br>Planning pin—verify legal parking and private-property access on arrival.');
+  L.marker(places.tachy,{icon:icon('1')}).addTo(map).bindPopup('<b>Tachycardia · 5.7</b><br>3 pitches · 300 ft<br>39.5561, −111.6708');
+  L.marker(places.dizzyParking,{icon:icon('P','parking')}).addTo(map).bindPopup('<b>Schoolroom-side parking</b><br>Planning pin—use only a legal, designated space.');
+  L.marker(places.dizzy,{icon:icon('2','dizzy')}).addTo(map).bindPopup('<b>The Dizzy Channel · 5.8−</b><br>4 pitches · 270 ft<br>39.5560, −111.6875');
+  const halo=(points,color,options={})=>{L.polyline(points,{color:'white',weight:8,opacity:.9,interactive:false,...options}).addTo(map);return L.polyline(points,{color,weight:4,...options}).addTo(map)};
+  halo([places.heartParking,[39.55575,-111.6718],[39.55593,-111.6713],places.tachy],'#b86a28',{dashArray:'8 8'}).bindTooltip('Schematic Heart Rock approach',{permanent:true,direction:'top',className:'route-label'});
+  halo([places.dizzyParking,[39.5557,-111.687],[39.5559,-111.68725],places.dizzy],'#23657a',{dashArray:'8 8'}).bindTooltip('Schematic Dizzy approach',{permanent:true,direction:'bottom',className:'route-label'});
+  halo([places.dizzy,places.dizzySummit,[39.55555,-111.68675],places.bench,[39.55525,-111.68655],places.dizzyParking],'#245549',{dashArray:'3 9'}).bindTooltip('Schematic walk-off',{permanent:true,direction:'right',className:'route-label'});
+  const allBounds=L.latLngBounds([places.heartParking,places.tachy,places.dizzyParking,places.dizzy,places.bench]);
+  const show=(which)=>{if(which==='heart')map.fitBounds([places.heartParking,places.tachy],{padding:[70,70],maxZoom:17,animate:false});else if(which==='dizzy')map.fitBounds([places.dizzyParking,places.dizzy,places.bench],{padding:[70,70],maxZoom:17,animate:false});else map.fitBounds(allBounds,{padding:[45,45],animate:false})};
+  document.getElementById('show-all').onclick=()=>show('all');document.getElementById('show-heart').onclick=()=>show('heart');document.getElementById('show-dizzy').onclick=()=>show('dizzy');show('all');
+  function switchDay(day){['day1','day2','day3'].forEach(id=>{document.getElementById(id+'-section').hidden=id!==day;document.getElementById(id+'-tab').setAttribute('aria-pressed',String(id===day))});if(day==='day1')setTimeout(()=>map.invalidateSize(),0)}
+  ['day1','day2','day3'].forEach(id=>document.getElementById(id+'-tab').onclick=()=>switchDay(id));
+</script>
+</body>
+</html>
