@@ -20,6 +20,7 @@
     <button id="day1-tab" aria-pressed="true">Fri · Maple</button>
     <button id="day2-tab" aria-pressed="false">Sat · BCC</button>
     <button id="day3-tab" aria-pressed="false">Sun · Flexible</button>
+    <button id="springs-tab" aria-pressed="false">Hot springs · access</button>
   </nav>
 </header>
 
@@ -97,9 +98,51 @@
     <p>Approximately four hours of single-pitch sport climbing, with the final area chosen from current conditions and the group's energy. Keep the rest of the day open for sightseeing or another activity.</p>
     <div class="placeholder-grid"><article class="option"><h3>American Fork</h3><p>Choose if conditions, desired grades, and canyon logistics make it the stronger morning option.</p></article><article class="option"><h3>Hard Rock</h3><p>Keep as the alternate until the forecast and preferred route list are settled.</p></article></div>
   </section>
+  <section class="day" id="springs-section" hidden>
+    <aside>
+      <span class="muted-tag">Optional outing · date not fixed</span>
+      <h2>Fifth Water · parking & hiking</h2>
+      <p>Two approaches to the same pools: <b>Three Forks</b> from Diamond Fork Road, or <b>Fifth Water Trailhead</b> on Rays Valley Road. The alternate is a separate drive and hike—not a nearby overflow lot.</p>
+      <div class="alert danger"><b>Water-quality caution, not a closure.</b> Utah DEQ’s latest posted update (July 15, 2026; checked October 19) warns that harmful bacteria may be present and reports severe rashes and blisters. No newer all-clear was posted when checked. <a href="https://deq.utah.gov/dwq/water-quality-health/fifth-water-hot-springs" target="_blank" rel="noopener">Read the current advisory before soaking ↗</a></div>
+      <div class="tools"><button class="tool" id="springs-all">Both approaches</button><button class="tool" id="springs-main">Three Forks</button><button class="tool" id="springs-rays">Rays Valley</button><a class="tool" href="fifth-water.geojson" download>Download map data</a><a class="tool" href="fifth-water.kml" download>Download KML</a></div>
+      <p class="small" id="springs-map-status" role="status">Open this tab to load the hiking map. Directions and source links below also work without the map.</p>
+      <div class="legend"><span class="swatch walk"></span>Green: Three Forks hiking approach<br><span class="swatch blue"></span>Blue: Rays Valley hiking approach<br>Gray numbered pins: mapped roadside candidates; signs decide legality.</div>
+
+      <article class="route">
+        <h3>A · Three Forks parking</h3>
+        <div class="facts"><span class="pill">Main approach</span><span class="pill">≈4.5–5.2 mi round trip</span><span class="pill">Out & back</span></div>
+        <p>The small main lot is on Diamond Fork Road. Follow the signed Fifth Water trail along Sixth Water Creek; at the creek junction, take the Fifth Water branch toward the pools. Do not take the Cottonwood/Second Water branch.</p>
+        <p>Published distances differ by source and endpoint: Utah.com lists 4.5 miles round trip; the Forest Service’s segment estimates total about 5.2. Allow extra time for parking, stops and changing.</p>
+        <p><a href="https://www.google.com/maps/dir/?api=1&destination=40.0843,-111.3549&travelmode=driving" target="_blank" rel="noopener">Driving directions to main parking ↗</a></p>
+        <button class="tool" id="springs-main-parking">Zoom to main parking</button>
+        <h4>If the lot is full</h4>
+        <p>The Forest Service permits <b>designated roadside pullouts only</b>. Gray pins show OSM-mapped candidates #6, #7 and #8, not verified open spaces or a guarantee of legal parking. Read current signs; do not block traffic or other vehicles. Ticketing and towing are strongly enforced.</p>
+        <p class="small">Pullouts require extra walking along the road to the main trailhead. No off-trail shortcuts or unverified roadside spaces are drawn.</p>
+      </article>
+
+      <article class="route">
+        <h3>B / C · Rays Valley alternative</h3>
+        <div class="facts"><span class="pill">Fifth Water Trailhead</span><span class="pill">Budget ≈5 mi round trip</span><span class="pill">Uphill return</span></div>
+        <p>The Forest Service suggests this alternate access. The map shows two community-mapped parking locations beside Rays Valley Road; verify that each is currently designated and accessible. The hiking trail leaves the west side of the road and descends southwest along Fifth Water Creek to the pools.</p>
+        <p>Utah.com describes roughly 2.5 miles each way. Do not confuse this access with Three Forks or assume the alternate saves time: it involves a different drive, and you climb back uphill after soaking.</p>
+        <p><a href="https://www.google.com/maps/dir/?api=1&destination=40.1056463,-111.2910747&travelmode=driving" target="_blank" rel="noopener">Directions to west-side parking B ↗</a><br><a href="https://www.google.com/maps/dir/?api=1&destination=40.1059653,-111.2905183&travelmode=driving" target="_blank" rel="noopener">Directions to mapped parking C ↗</a></p>
+        <button class="tool" id="springs-rays-parking">Zoom to parking B / C</button>
+      </article>
+
+      <div class="alert"><b>Seasonal access is not confirmed.</b> A winter road gate can add substantial road walking to the Three Forks outing. This map does not show a verified winter-parking plan. Check both access roads and trail conditions with the Spanish Fork Ranger District before driving; a map pin does not mean a road is open.</div>
+      <h3>Afternoon planning</h3>
+      <p>A 1–2 p.m. trail start can leave room for an unhurried outing if the normal trailhead is accessible and conditions are suitable. Budget roughly 3–4 hours for the standard hike and a stop, plus driving; allow more for alternate parking or slow conditions. Carry headlamps, dry clothes and warm layers. Do not depend on finishing a multipitch on schedule to make this outing.</p>
+      <h3>What the map does—and doesn’t—show</h3>
+      <p>Lines follow OpenStreetMap trail geometry retrieved October 19, 2026, not straight-line sketches. They are <b>community-mapped, not a field-verified GPS track</b>. Follow signs and actual trail conditions; download an offline navigation map. The pools pin marks an approximate area, not a recommended water-entry point. Parking pins do not establish permission, fees or availability.</p>
+      <ul class="checklist"><li><a href="https://www.fs.usda.gov/r04/uinta-wasatch-cache/recreation/three-forks-trailhead-0" target="_blank" rel="noopener">Forest Service: parking rules, fees & alternate access ↗</a></li><li><a href="https://www.fs.usda.gov/r04/uinta-wasatch-cache/recreation/trails/fifth-water-trail-015" target="_blank" rel="noopener">Forest Service: Fifth Water Trail #015 ↗</a></li><li><a href="https://www.utah.com/destinations/cities-towns/provo/hiking/fifth-water-waterfalls-and-hot-spring/" target="_blank" rel="noopener">Utah.com: both hiking approaches ↗</a></li><li><a href="https://www.fs.usda.gov/r04/uinta-wasatch-cache/recreation/spanish-fork-ranger-district" target="_blank" rel="noopener">Spanish Fork Ranger District: confirm access ↗</a></li></ul>
+      <footer>Trail and parking geometry © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, available under ODbL. Each map feature links to its source. Access information checked October 19, 2026; this is not a live closure or parking-availability feed.</footer>
+    </aside>
+    <div id="springs-map" class="map" aria-label="Fifth Water map: main and alternate parking, roadside candidates, and hiking approaches"></div>
+  </section>
 </main>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="hot-springs.js"></script>
 <script>
   const places={heartParking:[39.55555,-111.67215],tachy:[39.5561,-111.6708],dizzyParking:[39.55545,-111.68675],dizzy:[39.556,-111.6875],dizzySummit:[39.55585,-111.68725],bench:[39.55495,-111.6862]};
   const map=L.map('map',{zoomAnimation:false}).setView([39.556,-111.68],14);
@@ -117,8 +160,9 @@
   const allBounds=L.latLngBounds([places.heartParking,places.tachy,places.dizzyParking,places.dizzy,places.bench]);
   const show=(which)=>{if(which==='heart')map.fitBounds([places.heartParking,places.tachy],{padding:[70,70],maxZoom:17,animate:false});else if(which==='dizzy')map.fitBounds([places.dizzyParking,places.dizzy,places.bench],{padding:[70,70],maxZoom:17,animate:false});else map.fitBounds(allBounds,{padding:[45,45],animate:false})};
   document.getElementById('show-all').onclick=()=>show('all');document.getElementById('show-heart').onclick=()=>show('heart');document.getElementById('show-dizzy').onclick=()=>show('dizzy');show('all');
-  function switchDay(day){['day1','day2','day3'].forEach(id=>{document.getElementById(id+'-section').hidden=id!==day;document.getElementById(id+'-tab').setAttribute('aria-pressed',String(id===day))});if(day==='day1')setTimeout(()=>map.invalidateSize(),0)}
-  ['day1','day2','day3'].forEach(id=>document.getElementById(id+'-tab').onclick=()=>switchDay(id));
+  function switchDay(day){['day1','day2','day3','springs'].forEach(id=>{document.getElementById(id+'-section').hidden=id!==day;document.getElementById(id+'-tab').setAttribute('aria-pressed',String(id===day))});if(day==='day1')setTimeout(()=>map.invalidateSize(),0);if(day==='springs')window.openSpringsMap()}
+  ['day1','day2','day3','springs'].forEach(id=>document.getElementById(id+'-tab').onclick=()=>{switchDay(id);history.replaceState(null,'','#'+id)});
+  if(['day1','day2','day3','springs'].includes(location.hash.slice(1)))switchDay(location.hash.slice(1));
 </script>
 </body>
 </html>
