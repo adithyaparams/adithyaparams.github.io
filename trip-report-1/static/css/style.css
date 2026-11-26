@@ -1,0 +1,342 @@
+html {
+  border: 10px solid darkblue;
+  border-style: none none none solid;
+  border-image: linear-gradient(to bottom, navy, darksalmon) 0 100;
+  border-width: 0 0 0 10px;
+  min-height: 100%;
+  font-family: "EB Garamond", serif;
+}
+
+body {
+  max-width: 650px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  counter-reset: figure;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+figure img:first-child:nth-last-child(2),
+figure a:first-child:nth-last-child(2) img {  /* one image in figure */
+  max-width: 100%;
+}
+
+figure img:first-child:nth-last-child(3),  /* two images in figure */
+figure img:first-child:nth-last-child(3) ~ img,
+figure a:first-child:nth-last-child(3) img,
+figure a:first-child:nth-last-child(3) ~ a img {
+  max-width: 45%;
+}
+
+figure img:first-child:nth-last-child(4),  /* three images in figure */
+figure img:first-child:nth-last-child(4) ~ img,
+figure a:first-child:nth-last-child(4) img,
+figure a:first-child:nth-last-child(4) ~ a img {
+  max-width: 30%;
+}
+
+figure.gallery img {
+  max-width: 30%;
+}
+
+figure figcaption::before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-style: italic;
+}
+
+figure figcaption, figure figcaption a {
+  color: gray;
+}
+
+noscript {
+  background-color: lightpink;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica", sans-serif;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h1 time {
+  font-size: 1rem;
+
+  /* avoid breaking inside date on small screens */
+  display: inline-block;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+a {
+  color: black;
+}
+
+.horizontal ul {
+  padding: 0;
+}
+
+.horizontal li {
+  display: inline;
+}
+
+.horizontal nav li + li::before {
+  content: " // ";
+}
+
+.horizontal nav, .horizontal nav a {
+  color: gray;
+}
+
+.bread-crumbs, .bread-crumbs a {
+  color: gray;
+}
+
+.bread-crumbs li + li::before {
+  content: " → ";
+}
+
+.bread-crumbs ul::before {
+  content: "[this page]";
+  font-style: italic;
+  margin-right: 10px;
+}
+
+time {
+  color: gray;
+  font-style: italic;
+  font-family: "EB Garamond", serif;
+  font-weight: normal;
+}
+
+code, tt {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.9em;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid black;
+}
+
+hr.fancy {
+  border: none;
+  text-align: center;
+  height: 1em;
+}
+
+hr.fancy::after {
+  content: "☙ ❧";
+  padding: 0 4px;
+  position: relative;
+  font-family: "EB Garamond", serif;
+  color: black;
+}
+
+blockquote {
+  margin: 16px 0;
+  padding: 5px 5px 5px 40px;
+  border-left: 2px solid goldenrod;
+  background-color: floralwhite;
+}
+
+blockquote cite::before {
+  content: "— ";
+}
+
+dt {
+  font-style: italic;
+}
+
+dd {
+  margin-left: 40px;
+}
+
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
+abbr::after {
+  content: "[?]";
+  color: gray;
+  vertical-align: top;
+}
+
+kbd {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.8em;
+  padding: 2px;
+  background-color: ghostwhite;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.math {
+  font-size: 1em;
+}
+
+.katex {
+  font-size: 1em;
+}
+
+span.cn {
+  font-family: "Sim Kai", serif;
+  vertical-align: text-top;
+}
+
+a span.cn {
+  vertical-align: baseline;
+}
+
+table.content-listing {
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  width: 100%;
+}
+
+table.content-listing td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+table.content-listing td:first-child,
+table.content-listing td:first-child time {
+  background: black;
+  color: white;
+  font-style: normal;
+  font-family: "Helvetica", sans-serif;
+  font-size: 10pt;
+}
+
+/* LaTeX!
+ * Based on: https://stackoverflow.com/questions/8160514/is-there-css-for-typesetting-the-latex-logo-in-html
+ */
+.latex-logo sub, .latex-logo sup {
+  text-transform: uppercase;
+}
+.latex-logo sup {
+  vertical-align: -0.5ex;
+  font-size: 0.8em;
+  margin-left: -0.4em;
+  margin-right: -0.15em;
+}
+.latex-logo sub {
+  vertical-align: -0.1ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+}
+.latex-logo, .latex-logo sub {
+  font-size: 1em;
+}
+.latex-logo {
+  /* font-family: "Latin Modern Math", serif; */
+}
+
+/* Don't underline footnote links */
+a.footnote-ref {
+  text-decoration: none;
+}
+
+/* Comments! */
+.comment {
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+
+.comment .header {
+  background-color: moccasin;
+  color: black;
+  padding: 10px;
+  font-style: normal;
+  border-bottom: 1px dotted black;
+}
+
+.admin-comment .header {
+  background-color: powderblue;
+}
+
+.admin-comment .poster::after {
+  content: " (admin)";
+  color: lightcoral;
+}
+
+.comment .body {
+  padding: 10px;
+  white-space: pre-line;
+}
+
+#comments form {
+  border: 2px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+#comments form .field {
+  margin-top: 10px;
+}
+
+#comment-content {
+  display: float;
+  width: 95%;
+}
+
+#comments .submission {
+  text-align: center;
+}
+
+#comments input[type=submit] {
+  background-color: moccasin;
+  border: 1px solid black;
+  padding: 5px;
+  margin-top:10px;
+  color: black;
+}
+
+#comments input[type=submit]:hover, #comments input[type=submit]:focus {
+  background-color: goldenrod;
+}
+
+/* kind of a hack */
+pre.dummy-code-block {
+  background-color: #e6f3ff;
+  padding: 5px;
+}
+
+/* A little breathing room between gallery media and its caption. */
+figure.gallery > figcaption {
+  margin-top: 3px;
+}
+
+/* Bound videos on the first paint, before gallery JavaScript or metadata loads. */
+figure.gallery video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+figure.gallery > .gallery-video {
+  display: inline-block;
+  max-width: 30%;
+  vertical-align: top;
+}
+figure.gallery .gallery-video > p {
+  margin: 0;
+}

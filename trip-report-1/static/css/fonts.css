@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/helvetica/Helvetica.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/eb-garamond/EBGaramond08-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/eb-garamond/EBGaramond08-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/inconsolata/Inconsolata-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Floral Capitals";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/floral-capitals/FloralCapitals.woff2") format("woff2");
+}
+
+/*
+ * Most browsers won't request the Chinese font until it's used on the
+ * page.
+ */
+@font-face {
+  font-family: "Sim Kai";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/simkai/simkai.woff2") format("woff2");
+}
